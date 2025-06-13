@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebGen - AI Website Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 WebGen</h1>
+    <p>Generate website code using text or voice commands</p>
+
+    <textarea id="prompt" placeholder="Ask coding-related queries, e.g., 'Python function to sort list'"></textarea>
+    <div class="controls">
+      <button onclick="startVoiceInput()">🎤 Voice Input</button>
+      <button onclick="generateCode()">🚀 Generate Code</button>
+    </div>
+
+    <div id="codeContainer" style="display:none">
+      <h2>Generated Code</h2>
+      <textarea id="outputCode" rows="15"></textarea>
+      <div class="controls">
+        <button onclick="togglePreview()">👁 Preview</button>
+        <button onclick="downloadCode()">⬇ Download</button>
+      </div>
+    </div>
+
+    <div id="previewContainer" style="display:none">
+      <h2>Live Preview</h2>
+      <iframe id="previewFrame"></iframe>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
